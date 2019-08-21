@@ -1,0 +1,39 @@
+#header {
+    background-color: rgb(170, 85, 136);
+    color: rgb(220, 220, 220);
+    padding: 20px 0;
+    margin-top: 5px;
+}
+
+#range-value {
+    display: inline;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+#container {
+    margin: 40px 80px 40px 80px;
+    border: 2px solid rgb(170, 85, 136);
+    border-radius: 3px;
+    background-color: rgb(238, 238, 238);
+}
+
+#container-header {
+    font-size: 17px;
+    padding: 35px 0px 35px 0px;
+    background-color: rgb(204, 204, 204);
+}
+
+#pyramid {
+    padding: 50px 0px 50px 0px;
+    line-height: 0;
+    font-size: 30px;
+    color: rgb(170, 85, 136);
+}
+
+body {
+    margin: 0 20%;
+    font-family: "Courier New", monospace;
+    text-align: center;
+    background-color: #fafafa;
+}
