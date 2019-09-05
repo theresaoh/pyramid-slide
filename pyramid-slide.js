@@ -2,22 +2,8 @@ const rangeElem = document.getElementById("range");
 const rangeValue = document.getElementById("range-value");
 const brickType = document.getElementById("brick-type");
 
-//display the default value (8) of the range element
-rangeValue.innerHTML = rangeElem.value;
-
-//when the brick type is changed, redraw the pyramid with that brick type
-brickType.onchange = function(event) {
-    let height = rangeElem.value;
-    drawPyramid(height);
-}
-
-//when the height is changed, redraw the pyramid with that height
-rangeElem.oninput = function(event) {
-    let height = rangeElem.value;
-    drawPyramid(height);
-}
-
-function drawPyramid(height) {
+const drawPyramid = function() {
+    height = rangeElem.value;
     // first, clear the old content
     document.getElementById("pyramid").innerHTML = "";
     // change the displayed range value as it's changed by the user
@@ -33,7 +19,7 @@ function drawPyramid(height) {
         // build up a string for this row
         let rowStr = "";
         for (let i = 0; i < numSpaces; i++) {
-            let spaceChar = "&nbsp";
+            let spaceChar = "&nbsp;";
             rowStr += spaceChar;
         }
         for (let i = 0; i < numBricks; i++) {
@@ -46,3 +32,9 @@ function drawPyramid(height) {
         document.getElementById("pyramid").appendChild(rowElem);
     }
 }
+
+//when the brick type is changed, redraw the pyramid with that brick type
+brickType.onchange = drawPyramid;
+
+//when the height is changed, redraw the pyramid with that height
+rangeElem.oninput = drawPyramid;
